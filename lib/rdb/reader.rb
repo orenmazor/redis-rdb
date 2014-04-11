@@ -18,6 +18,7 @@ module RDB
         loop do
           state.key_type_id = rdb.readbyte
           state.info = {}
+          state.key_expiration = nil
 
           case state.key_type_id
           when Opcode::EXPIRETIME_MS
